@@ -62,10 +62,27 @@
   &:hover {
     opacity: 0.8;
   }
+  &:active {
+    color: green;
+  }
 }
 
 @mixin arrow() {
   stroke-width: 2px;
   align-self: center;
   transition: transform 1s ease;
+}
+
+@mixin notify() {
+  @include flexible(21px);
+  justify-content: center;
+  align-items: center;
+  line-height: 1;
+  border-radius: 50%;
+  width: 21px;
+  height: 21px;
+  font-weight: 500;
+  font-size: 14px;
+  color: $color-white;
+  background-color: $color-decorate-blue;
 }

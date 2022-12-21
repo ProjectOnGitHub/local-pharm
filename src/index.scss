@@ -5,10 +5,9 @@
   @include gridable(100%);
   background-color: $color-white;
   grid-template-columns: 1fr;
-  grid-template-rows: repeat(3, 1fr);
+  gap: 36px;
   justify-items: center;
   box-sizing: border-box;
-  padding: 0 20px;
   height: 100%;
   font-weight: 400;
   font-family: 'Inter', Arial, sans-serif;
@@ -20,7 +19,6 @@
 main,
 footer {
   @include gridable(100%);
-  grid-template-columns: 1fr;
   justify-items: center;
   box-sizing: border-box;
   width: 100%;
@@ -29,7 +27,7 @@ footer {
 .header {
   &__container {
     box-sizing: border-box;
-    padding-top: 20px;
+    padding: 20px 20px 0 20px;
     @include gridable(100%);
     grid-template-columns: 1fr;
     grid-template-rows: repeat(2, min-content);
@@ -133,7 +131,7 @@ footer {
       height: 40px;
     }
     &-text {
-      font-weight: bold;
+      font-weight: 400;
       font-size: 22px;
       text-transform: uppercase;
       line-height: 1;
@@ -232,19 +230,9 @@ footer {
     text-decoration: none;
     color: $color-decorate-blue;
     font-size: 18px;
-    font-weight: 500px;
+    font-weight: 500;
   }
   &__orders {
-    @include flexible(21px);
-    justify-content: center;
-    align-items: center;
-    line-height: 1;
-    border-radius: 50%;
-    width: 21px;
-    height: 21px;
-    font-weight: 500px;
-    font-size: 14px;
-    color: $color-white;
-    background-color: $color-decorate-blue;
+    @include notify();
   }
 }
