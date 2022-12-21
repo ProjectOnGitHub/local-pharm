@@ -16,7 +16,56 @@
 
 @mixin link {
   cursor: pointer;
-  white-space: nowrap;
+  transition: opacity 0.5s ease;
   text-decoration: none;
-  transition: text-decoration 1s ease;
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+@mixin navHoverEffect {
+  cursor: pointer;
+  transition: opacity 0.5s ease;
+  position: relative;
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    right: 0;
+    bottom: -3px;
+    width: 0;
+    height: 2px;
+    background-color: $color-decorate-green;
+    transition: width 0.5s;
+  }
+  &:hover:after {
+    content: '';
+    width: 100%;
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    height: 2px;
+    background-color: $color-decorate-blue;
+    transition: width 0.5s;
+  }
+}
+
+@mixin button() {
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 0;
+  cursor: pointer;
+  transition: opacity 0.5s ease;
+  border: none;
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+@mixin arrow() {
+  stroke-width: 2px;
+  align-self: center;
+  transition: transform 1s ease;
 }

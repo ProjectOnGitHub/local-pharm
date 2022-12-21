@@ -14,28 +14,38 @@
             <nav class="header__nav">
               <ul class="header__menu">
                 <li class="header__menu-item header__menu-item_city">
-                  Санкт-Петербург <span class="header__menu-arrow"></span>
+                  <a href="" class="header__link">Санкт-Петербург</a>
+                  <svg class="header__arrow-icon">
+                    <use xlink:href="#arrow-icon"></use>
+                  </svg>
                 </li>
-                <li class="header__menu-item">Доставка и оплата</li>
-                <li class="header__menu-item">Гарантии и возврат</li>
+
+                <li class="header__menu-item">
+                  <a href="" class="header__link">Доставка и оплата</a>
+                </li>
+                <li class="header__menu-item">
+                  <a href="" class="header__link">Гарантии и возврат</a>
+                </li>
               </ul>
             </nav>
             <div class="header__phone">
               <a href="tel:84957305300" class="header__phone-number"
                 >8 495 730 53 00</a
               >
-              круглосуточно
+              <p class="header__phone-text">Круглосуточно</p>
             </div>
             <div class="header__profile">
               <svg class="header__profile-icon">
                 <use xlink:href="#profile-icon"></use>
               </svg>
-              Богдан
-              <button class="header__profile-button"></button>
+              <a href="" class="header__link">Богдан</a>
+              <svg class="header__arrow-icon">
+                <use xlink:href="#arrow-icon"></use>
+              </svg>
             </div>
           </div>
           <div class="header__bottom">
-            <div class="header__logo">
+            <a href="/" class="header__logo">
               <svg class="header__logo-icon">
                 <use xlink:href="#logo-icon"></use>
               </svg>
@@ -43,25 +53,32 @@
               <span class="header__logo-text header__logo-text_bottom"
                 >Pharm</span
               >
-            </div>
-            <bottom class="header__bottom">Каталог</bottom>
+            </a>
+            <bottom class="header__catalog-button"
+              >Каталог
+              <svg class="header__catalog-arrow-icon">
+                <use xlink:href="#arrow-icon"></use></svg
+            ></bottom>
             <form class="search-form">
-              <fieldset class="search-form__fieldset">
-                <label class="search-form__label">
-                  <input type="search" class="search-form__input" />
-                  <button class="search-form__button">
-                    <svg class="search-form__icon">
-                      <use xlink:href="#search-icon"></use>
-                    </svg>
-                  </button>
-                </label>
-              </fieldset>
+              <label class="search-form__label">
+                <input
+                  type="search"
+                  class="search-form__input"
+                  placeholder="Название или категория товара"
+                />
+                <button class="search-form__button">
+                  <svg class="search-form__icon">
+                    <use xlink:href="#search-icon"></use>
+                  </svg>
+                </button>
+              </label>
             </form>
             <div class="cart">
               <svg class="cart__icon">
                 <use xlink:href="#cart-icon"></use>
               </svg>
-              Корзина <span class="cart__orders">2</span>
+              <a href="" class="cart__link">Корзина</a>
+              <span class="cart__orders">2</span>
             </div>
           </div>
         </div>

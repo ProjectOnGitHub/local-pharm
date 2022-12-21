@@ -12,6 +12,7 @@ module.exports = {
     publicPath: '',
   },
   mode: 'development',
+  devtool: 'inline-source-map',
   devServer: {
     static: {
       directory: path.join(__dirname, 'public'),
