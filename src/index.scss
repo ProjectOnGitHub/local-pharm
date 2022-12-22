@@ -391,3 +391,100 @@ footer {
     height: 19px;
   }
 }
+
+.delivery {
+  &__info {
+    box-sizing: border-box;
+    @include gridable(100%);
+    grid-template-columns: repeat(2, max-content);
+    padding: 0 28px 33px 40px;
+    gap: 4px 50px;
+    grid-template-areas:
+      'title-address title-date'
+      'text-address text-date';
+  }
+  &__title {
+    font-size: 14px;
+    font-weight: 500;
+    color: $color-txt-seconary;
+    margin: 0;
+    &_address {
+      grid-area: title-address;
+    }
+    &_date {
+      grid-area: title-date;
+    }
+  }
+  &__text {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    &_address {
+      grid-area: text-address;
+    }
+    &_date {
+      grid-area: text-date;
+    }
+  }
+  &__status {
+    box-sizing: border-box;
+    @include unmarkedList(0, 0);
+    @include gridable(100%);
+    justify-content: space-between;
+    background-color: $color-bg-delivery;
+    border-radius: 5px 5px 0 0;
+    padding: 32px 27px 24px 51px;
+    grid-template-columns: repeat(4, max-content);
+    &-item {
+      @include gridable(100%);
+      justify-items: center;
+      gap: 9px;
+      position: relative;
+      &::before {
+        z-index: 1;
+        @include flexible(200px);
+        content: '';
+        position: absolute;
+        height: 3px;
+        top: 26px;
+        right: 50px;
+        background-color: $color-bg-delivery-default;
+      }
+      &_done {
+        .delivery__status-text {
+          color: $color-decorate-green;
+        }
+        .delivery__circle {
+          background-color: $color-decorate-green;
+        }
+        &::before {
+          @include flexible(200px);
+          content: '';
+          position: absolute;
+          height: 3px;
+          top: 26px;
+          left: 50px;
+          background-color: $color-decorate-green;
+        }
+      }
+    }
+    &-text {
+      margin: 0;
+      color: $color-txt-seconary;
+      font-size: 17px;
+      font-weight: 500;
+    }
+  }
+  &__circle {
+    z-index: 10;
+    @include flexible(54px);
+    position: relative;
+    align-items: center;
+    border-radius: 50%;
+    height: 54px;
+    background-color: $color-bg-delivery-default;
+  }
+  &__icon {
+    height: 24px;
+  }
+}
