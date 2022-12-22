@@ -325,3 +325,69 @@ footer {
     border-radius: 5px;
   }
 }
+
+.order {
+  &__container {
+    border-radius: 5px;
+    box-sizing: border-box;
+    @include gridable(100%);
+    align-items: center;
+    &_delivery {
+      padding: 30px 28px 26px 40px;
+      column-gap: 16px;
+      grid-template-columns: max-content max-content 1fr;
+      grid-template-areas:
+        'title contact payment'
+        'number . total';
+    }
+    &_delivered {
+      background-color: $color-bg-order;
+      padding: 12px 28px 12px 40px;
+      grid-template-areas:
+        'title . payment'
+        'number . total';
+    }
+  }
+  &__title {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 700;
+    grid-area: title;
+  }
+  &__link {
+    @include link();
+    font-size: 18px;
+    font-weight: 600;
+    &_contact {
+      color: $color-decorate-green;
+      @include flexible(100%);
+      gap: 10px;
+      flex-wrap: nowrap;
+      grid-area: contact;
+    }
+    &_number {
+      color: $color-decorate-blue;
+      grid-area: number;
+    }
+  }
+
+  &__payment {
+    font-size: 17px;
+    font-weight: 500;
+    justify-self: end;
+    margin: 0;
+    grid-area: payment;
+  }
+  &__total {
+    font-size: 24px;
+    font-weight: 700;
+    justify-self: end;
+    margin: 0;
+    grid-area: total;
+  }
+  &__icon {
+    fill: $color-decorate-green;
+    width: 19px;
+    height: 19px;
+  }
+}
