@@ -128,15 +128,19 @@
             </h1>
             <ul class="orders__list">
               <li class="order">
-                <h2 class="order__title">В доставке</h2>
-                <a href="" class="order__link"
-                  ><svg class="order__icon">
-                    <use xlink:href="#phone-icon"></use></svg
-                  >Связаться с нами</a
-                >
-                <a href="" class="order__number">№357765</a>
-                <p class="order__payment">Оплачено картой</p>
-                <p class="order__total">1344 ₽</p>
+                <div class="order__container order__container_delivery">
+                  <h2 class="order__title">В доставке</h2>
+                  <a href="" class="order__link order__link_contact"
+                    ><svg class="order__icon">
+                      <use xlink:href="#phone-icon"></use></svg
+                    >Связаться с нами</a
+                  >
+                  <a href="" class="order__link order__link_number">№357765</a>
+                  <p class="order__payment">Оплачено картой</p>
+                  <p class="order__total">
+                    1344 <span class="order__currency">₽</span>
+                  </p>
+                </div>
                 <div class="delivery">
                   <div class="delivery__info">
                     <h4 class="delivery__title">Адрес доставки</h4>
@@ -171,7 +175,9 @@
                         >Курьер попросит рецепт</span
                       >
                     </div>
-                    <p class="order__item-price">542 ₽</p>
+                    <p class="order__item-price">
+                      542 <span class="order__currency">₽</span>
+                    </p>
                   </li>
                   <li class="order__item">
                     <img src="" alt="" class="order__photo" />
@@ -191,7 +197,9 @@
                       </ul>
                       <span class="order__item-text"></span>
                     </div>
-                    <p class="order__item-price">282 ₽</p>
+                    <p class="order__item-price">
+                      282 <span class="order__currency">₽</span>
+                    </p>
                   </li>
                   <li class="order__item">
                     <img src="" alt="" class="order__photo" />
@@ -211,19 +219,25 @@
                       </ul>
                       <span class="order__item-text"></span>
                     </div>
-                    <p class="order__item-price">520 ₽</p>
+                    <p class="order__item-price">
+                      520 <span class="order__currency">₽</span>
+                    </p>
                   </li>
                 </ul>
               </li>
             </ul>
             <ul class="orders__list">
               <li class="order">
-                <h2 class="order__title">
-                  Доставлен <span class="order__delivery-date">11 мая</span>
-                </h2>
-                <a href="" class="order__number">№357765</a>
-                <p class="order__payment">Оплачено онлайн</p>
-                <p class="order__total">654 ₽</p>
+                <div class="order__container order__container_delivered">
+                  <h2 class="order__title">
+                    Доставлен <span class="order__delivery-date">11 мая</span>
+                  </h2>
+                  <a href="" class="order__link order__link_number">№357765</a>
+                  <p class="order__payment">Оплачено онлайн</p>
+                  <p class="order__total">
+                    654 <span class="order__currency">₽</span>
+                  </p>
+                </div>
                 <ul class="order__short-list">
                   <li class="order__short-list-item">
                     <img src="" alt="" class="order__short-list-item-photo" />
@@ -242,12 +256,16 @@
                 ></a>
               </li>
               <li class="order">
-                <h2 class="order__title">
-                  Доставлен <span class="order__delivery-date">25 марта</span>
-                </h2>
-                <a href="" class="order__number">№357765</a>
-                <p class="order__payment">Оплачено наличными</p>
-                <p class="order__total">778 ₽</p>
+                <div class="order__container order__container_delivered">
+                  <h2 class="order__title">
+                    Доставлен <span class="order__delivery-date">25 марта</span>
+                  </h2>
+                  <a href="" class="order__link order__link_number">№357765</a>
+                  <p class="order__payment">Оплачено наличными</p>
+                  <p class="order__total">
+                    778 <span class="order__currency">₽</span>
+                  </p>
+                </div>
                 <ul class="order__short-list">
                   <li class="order__short-list-item">
                     <img src="" alt="" class="order__short-list-item-photo" />
