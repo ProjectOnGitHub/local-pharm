@@ -435,35 +435,39 @@ footer {
     border-radius: 5px 5px 0 0;
     padding: 32px 27px 24px 51px;
     grid-template-columns: repeat(4, max-content);
+
     &-item {
       @include gridable(100%);
       justify-items: center;
       gap: 9px;
       position: relative;
-      &::before {
-        z-index: 1;
-        @include flexible(200px);
-        content: '';
-        position: absolute;
-        height: 3px;
-        top: 26px;
-        right: 50px;
-        background-color: $color-bg-delivery-default;
+      &::after {
+        @include deliveryStatusDefault();
       }
+      &:nth-child(4):after {
+        display: none;
+      }
+
       &_done {
+        &:nth-child(2) {
+          &::before {
+            @include deliveryStatusDone();
+          }
+        }
+        &:nth-child(3) {
+          &::before {
+            @include deliveryStatusDone();
+          }
+        }
+        &:nth-child(4) {
+          &::before {
+            @include deliveryStatusDone();
+          }
+        }
         .delivery__status-text {
           color: $color-decorate-green;
         }
         .delivery__circle {
-          background-color: $color-decorate-green;
-        }
-        &::before {
-          @include flexible(200px);
-          content: '';
-          position: absolute;
-          height: 3px;
-          top: 26px;
-          left: 50px;
           background-color: $color-decorate-green;
         }
       }

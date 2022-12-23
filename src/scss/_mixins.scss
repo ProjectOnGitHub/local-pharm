@@ -86,3 +86,25 @@
   color: $color-white;
   background-color: $color-decorate-blue;
 }
+
+@mixin deliveryStatusDefault {
+  z-index: 1;
+  @include flexible(200px);
+  content: '';
+  position: absolute;
+  height: 3px;
+  top: 26px;
+  left: 50px;
+  background-color: $color-bg-delivery-default;
+}
+
+@mixin deliveryStatusDone {
+  z-index: 10;
+  @include flexible(200px);
+  content: '';
+  position: absolute;
+  height: 3px;
+  top: 26px;
+  right: 50px;
+  background-color: $color-decorate-green;
+}
