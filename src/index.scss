@@ -370,7 +370,6 @@ footer {
       grid-area: number;
     }
   }
-
   &__payment {
     font-size: 17px;
     font-weight: 500;
@@ -389,6 +388,100 @@ footer {
     fill: $color-decorate-green;
     width: 19px;
     height: 19px;
+  }
+
+  &__sublist {
+    @include gridable(100%);
+    @include unmarkedList(0, 0);
+    padding-top: 65px;
+    padding-left: 36px;
+    padding-right: 27px;
+    padding-bottom: 10px;
+    box-sizing: border-box;
+    &-item {
+      @include gridable(100%);
+      align-items: center;
+      box-sizing: border-box;
+      min-height: 130px;
+      height: 100%;
+      grid-template-columns: max-content 1fr;
+      column-gap: 44px;
+      border-bottom: 1px solid $color-border-order;
+      padding: 16px 0;
+
+      &:last-child {
+        border-bottom: none;
+      }
+      &-info {
+        @include gridable(100%);
+        gap: 10px;
+        grid-template-areas:
+          'title price'
+          'docs .';
+        &_recipe {
+          grid-template-areas:
+            'title price'
+            'docs .'
+            'recipe.';
+          & .order__sublist-item-text_recipe {
+            display: block;
+            grid-area: recipe;
+          }
+        }
+      }
+
+      &-price {
+        grid-area: price;
+        font-size: 22px;
+        font-weight: 500;
+        justify-self: end;
+        align-self: baseline;
+        margin: 0;
+      }
+      &-photo {
+        width: 97px;
+        height: auto;
+        object-fit: contain;
+        align-self: start;
+      }
+      &-text {
+        padding: 6px 12px;
+        border-radius: 5px;
+        background-color: $color-bg-recipe;
+        color: $color-white;
+        width: max-content;
+        display: none;
+        font-size: 14px;
+        font-weight: 500;
+      }
+    }
+  }
+  &__subtitle {
+    grid-area: title;
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+  }
+  &__docs {
+    grid-area: docs;
+    @include unmarkedList(0, 0);
+    @include flexible(100%);
+    gap: 5px;
+    &-item {
+      &::after {
+        content: '•';
+        color: rgba($color-txt-primary, 0.4);
+      }
+      &:last-child::after {
+        display: none;
+      }
+    }
+    &-link {
+      @include link();
+      color: $color-decorate-green;
+      font-size: 13px;
+      font-weight: 500;
+    }
   }
 }
 
