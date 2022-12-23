@@ -240,7 +240,7 @@ footer {
   &__container {
     justify-content: space-between;
     box-sizing: border-box;
-    padding: 0 20px;
+    padding: 0 20px 36px 20px;
     @include gridable(100%);
     gap: 20px;
     grid-template-columns: max-content minmax(280px, 825px);
