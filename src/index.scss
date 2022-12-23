@@ -319,10 +319,20 @@ footer {
     color: $color-txt-seconary;
   }
   &__list {
+    @include gridable(100%);
+    gap: 28px;
     @include unmarkedList(0, 0);
-    box-shadow: 0px 4px 20px rgba($color-txt-primary, 0.15);
     box-sizing: border-box;
-    border-radius: 5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    &_in-delivery {
+      box-shadow: 0px 4px 20px rgba($color-txt-primary, 0.15);
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+    }
+    &_delivered {
+      gap: 28px;
+    }
   }
 }
 
@@ -389,7 +399,6 @@ footer {
     width: 19px;
     height: 19px;
   }
-
   &__sublist {
     @include gridable(100%);
     @include unmarkedList(0, 0);
@@ -408,7 +417,6 @@ footer {
       column-gap: 44px;
       border-bottom: 1px solid $color-border-order;
       padding: 16px 0;
-
       &:last-child {
         border-bottom: none;
       }
@@ -429,7 +437,6 @@ footer {
           }
         }
       }
-
       &-price {
         grid-area: price;
         font-size: 22px;
@@ -482,6 +489,44 @@ footer {
       font-size: 13px;
       font-weight: 500;
     }
+  }
+  &__short-list {
+    @include unmarkedList(0, 0);
+    @include flexible(100%);
+    box-sizing: border-box;
+    padding: 26px 50px;
+    align-items: center;
+    gap: 24px;
+    &-item-photo {
+      width: 65px;
+      height: auto;
+      object-fit: contain;
+    }
+  }
+  &__show-all {
+    color: $color-decorate-blue;
+    height: 42px;
+    @include button();
+    font-size: 18px;
+    font-weight: 600;
+    width: 100%;
+    border-radius: 5px;
+    background-color: $color-bg-order;
+    &:hover {
+      .order__arrow-icon {
+        transform: rotateX(180deg);
+      }
+    }
+  }
+  &__arrow-icon {
+    @include arrow();
+    width: 22px;
+    height: 12px;
+    stroke: $color-decorate-blue;
+  }
+  &_delivered {
+    border-radius: 5px;
+    box-shadow: 0px 4px 20px rgba($color-txt-primary, 0.15);
   }
 }
 

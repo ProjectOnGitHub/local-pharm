@@ -127,7 +127,7 @@
             <h1 class="orders__title">
               Мои заказы <span class="orders__quantity">3</span>
             </h1>
-            <ul class="orders__list">
+            <ul class="orders__list orders__list_in-delivery">
               <li class="order">
                 <div class="order__container order__container_delivery">
                   <h2 class="order__title">В доставке</h2>
@@ -291,8 +291,8 @@
                 </ul>
               </li>
             </ul>
-            <ul class="orders__list">
-              <li class="order">
+            <ul class="orders__list orders__list_delivered">
+              <li class="order order_delivered">
                 <div class="order__container order__container_delivered">
                   <h2 class="order__title">
                     Доставлен <span class="order__delivery-date">11 мая</span>
@@ -305,22 +305,35 @@
                 </div>
                 <ul class="order__short-list">
                   <li class="order__short-list-item">
-                    <img src="" alt="" class="order__short-list-item-photo" />
+                    <img
+                      src="<%=require('../src/images/photo/flebodia.png')%>"
+                      alt="Флебодиа"
+                      class="order__short-list-item-photo"
+                    />
                   </li>
                   <li class="order__short-list-item">
-                    <img src="" alt="" class="order__short-list-item-photo" />
+                    <img
+                      src="<%=require('../src/images/photo/fenazepam.png')%>"
+                      alt="Фенозепам"
+                      class="order__short-list-item-photo"
+                    />
                   </li>
                   <li class="order__short-list-item">
-                    <img src="" alt="" class="order__short-list-item-photo" />
+                    <img
+                      src="<%=require('../src/images/photo/arbidol.png')%>"
+                      alt="Арбидол"
+                      class="order__short-list-item-photo"
+                    />
                   </li>
                 </ul>
-                <a href="" class="order__show-all"
-                  >Все товары
+                <button class="order__show-all">
+                  Все товары
                   <svg class="order__arrow-icon">
-                    <use xlink:href="#arrow-icon"></use></svg
-                ></a>
+                    <use xlink:href="#arrow-icon"></use>
+                  </svg>
+                </button>
               </li>
-              <li class="order">
+              <li class="order order_delivered">
                 <div class="order__container order__container_delivered">
                   <h2 class="order__title">
                     Доставлен <span class="order__delivery-date">25 марта</span>
@@ -333,20 +346,33 @@
                 </div>
                 <ul class="order__short-list">
                   <li class="order__short-list-item">
-                    <img src="" alt="" class="order__short-list-item-photo" />
+                    <img
+                      src="<%=require('../src/images/photo/kreon.png')%>"
+                      alt="Креон"
+                      class="order__short-list-item-photo"
+                    />
                   </li>
                   <li class="order__short-list-item">
-                    <img src="" alt="" class="order__short-list-item-photo" />
+                    <img
+                      src="<%=require('../src/images/photo/fenazepam.png')%>"
+                      alt="Фенозепам"
+                      class="order__short-list-item-photo"
+                    />
                   </li>
                   <li class="order__short-list-item">
-                    <img src="" alt="" class="order__short-list-item-photo" />
+                    <img
+                      src="<%=require('../src/images/photo/arbidol.png')%>"
+                      alt="Арбидол"
+                      class="order__short-list-item-photo"
+                    />
                   </li>
                 </ul>
-                <a href="" class="order__show-all"
-                  >Все товары
+                <button class="order__show-all">
+                  Все товары
                   <svg class="order__arrow-icon">
-                    <use xlink:href="#arrow-icon"></use></svg
-                ></a>
+                    <use xlink:href="#arrow-icon"></use>
+                  </svg>
+                </button>
               </li>
             </ul>
           </section>
