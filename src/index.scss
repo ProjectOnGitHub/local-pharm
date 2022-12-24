@@ -629,16 +629,54 @@ footer {
 }
 
 .footer {
+  background-color: $color-bg-footer;
   &__container {
     @include gridable(100%);
     box-sizing: border-box;
-    padding: 0 20px;
+    padding: 47px 20px 0;
     max-width: $max-width;
+    gap: 68px;
+  }
+  &__nav {
+    @include gridable(100%);
+    grid-template-columns: 2fr repeat(2, 1fr);
+    gap: 40px;
+  }
+  &__column {
+    @include gridable(100%);
+    align-content: start;
+    gap: 34px;
+  }
+  &__title {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 500;
+  }
+  &__menu {
+    @include unmarkedList(0, 0);
+    @include flexible(100%);
+    flex-direction: column;
+    flex-wrap: wrap;
+    font-size: 14px;
+    gap: 20px 62px;
+    max-height: 128px;
+    &-link {
+      @include link();
+      color: $color-txt-footer;
+      &_green {
+        color: $color-decorate-green;
+      }
+    }
+    &_assortiment {
+      align-content: flex-start;
+    }
   }
 }
+
 .banner {
   @include gridable(100%);
-  padding: 86px 0 47px;
+  padding-top: 86px;
+  background-color: $color-white;
   &__container {
     @include gridable(100%);
     height: 136px;
