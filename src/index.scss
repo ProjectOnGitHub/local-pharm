@@ -368,13 +368,6 @@ footer {
     @include link();
     font-size: 18px;
     font-weight: 600;
-    &_contact {
-      color: $color-decorate-green;
-      @include flexible(100%);
-      gap: 10px;
-      flex-wrap: nowrap;
-      grid-area: contact;
-    }
     &_number {
       color: $color-decorate-blue;
       grid-area: number;
@@ -394,11 +387,11 @@ footer {
     margin: 0;
     grid-area: total;
   }
-  &__icon {
-    fill: $color-decorate-green;
-    width: 19px;
-    height: 19px;
-  }
+  // &__icon {
+  //   fill: $color-decorate-green;
+  //   width: 19px;
+  //   height: 19px;
+  // }
   &__sublist {
     @include gridable(100%);
     @include unmarkedList(0, 0);
@@ -621,5 +614,21 @@ footer {
   }
   &__icon {
     height: 24px;
+  }
+}
+
+.contact-us {
+  @include link();
+  font-size: 18px;
+  font-weight: 600;
+  color: $color-decorate-green;
+  @include flexible(100%);
+  gap: 10px;
+  flex-wrap: nowrap;
+  grid-area: contact;
+  &__icon {
+    fill: $color-decorate-green;
+    width: 19px;
+    height: 19px;
   }
 }
