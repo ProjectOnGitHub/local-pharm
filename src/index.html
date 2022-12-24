@@ -379,18 +379,36 @@
         </div>
       </main>
       <footer class="footer">
-        <div class="footer__container">
-          <div class="banner">
-            <p class="banner__text">Скачай приложение и экономь еще больше</p>
-            <ul class="banner__store">
-              <li class="banner__store-item"></li>
-              <li class="banner__store-item"></li>
+        <div class="banner">
+          <div class="banner__container">
+            <p class="banner__text">
+              Скачай приложение<br />
+              и экономь еще больше
+            </p>
+            <ul class="banner__list banner__list_store">
+              <li class="banner__list-item">
+                <svg class="banner__icon">
+                  <use xlink:href="#app-store-icon"></use>
+                </svg>
+              </li>
+              <li class="banner__list-item">
+                <svg class="banner__icon">
+                  <use xlink:href="#google-play-icon"></use>
+                </svg>
+              </li>
             </ul>
-            <ul class="banner__images">
-              <li class="banner__image"></li>
-              <li class="banner__image"></li>
+            <ul class="banner__list banner__list_mobile">
+              <li class="banner__list-item banner__list-item_android"></li>
+              <li class="banner__list-item banner__list-item_apple">
+                <div class="sale">
+                  <h4 class="sale__title">до 20%</h4>
+                  <p class="sale__text">в приложении</p>
+                </div>
+              </li>
             </ul>
           </div>
+        </div>
+        <div class="footer__container">
           <nav class="footer_nav">
             <h3 class="footer__title">Ассортимент</h3>
             <ul class="footer__menu">
