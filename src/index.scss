@@ -633,7 +633,7 @@ footer {
   &__container {
     @include gridable(100%);
     box-sizing: border-box;
-    padding: 47px 20px 0;
+    padding: 47px 20px 20px;
     max-width: $max-width;
     gap: 68px;
   }
@@ -657,19 +657,39 @@ footer {
     @include flexible(100%);
     flex-direction: column;
     flex-wrap: wrap;
-    font-size: 14px;
-    gap: 20px 62px;
-    max-height: 128px;
-    &-link {
-      @include link();
-      color: $color-txt-footer;
-      &_green {
-        color: $color-decorate-green;
-      }
-    }
+    gap: 18px 62px;
+    max-height: 138px;
     &_assortiment {
       align-content: flex-start;
     }
+  }
+  &__info {
+    @include flexible(100%);
+    gap: 24px;
+    align-items: center;
+    min-height: 42px;
+  }
+  &__link {
+    @include link();
+    font-weight: 400;
+    font-size: 14px;
+    color: $color-txt-footer;
+    &_green {
+      color: $color-decorate-green;
+    }
+  }
+  &__docs {
+    @include unmarkedList(0, 0);
+    @include flexible(100%);
+    justify-content: flex-end;
+    gap: 24px;
+  }
+  &__copyright {
+    font-size: 14px;
+    font-weight: 400;
+    color: rgba($color-txt-footer, 0.5);
+    margin: 0;
+    white-space: nowrap;
   }
 }
 
