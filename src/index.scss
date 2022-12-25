@@ -486,6 +486,10 @@ footer {
     padding-right: 27px;
     padding-bottom: 10px;
     box-sizing: border-box;
+    @media screen and (max-width: $smartphone) {
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 30px;
+    }
     &-item {
       @include gridable(100%);
       align-items: center;
@@ -496,6 +500,15 @@ footer {
       column-gap: 44px;
       border-bottom: 1px solid $color-border-order;
       padding: 16px 0;
+      @media screen and (max-width: $smartphone) {
+        grid-template-columns: 1fr;
+        min-height: 280px;
+        height: 100%;
+        max-height: 350px;
+        grid-auto-rows: min-content 1fr;
+        column-gap: 0;
+        row-gap: 10px;
+      }
       &:last-child {
         border-bottom: none;
       }
@@ -505,11 +518,27 @@ footer {
         grid-template-areas:
           'title price'
           'docs .';
+        @media screen and (max-width: $smartphone) {
+          grid-template-areas:
+            'title'
+            'docs'
+            'price';
+          gap: 10px;
+          height: 100%;
+          align-content: space-between;
+        }
         &_recipe {
           grid-template-areas:
             'title price'
             'docs .'
             'recipe.';
+          @media screen and (max-width: $smartphone) {
+            grid-template-areas:
+              'title'
+              'docs'
+              'recipe'
+              'price';
+          }
           & .order__sublist-item-text_recipe {
             display: block;
             grid-area: recipe;
@@ -523,12 +552,18 @@ footer {
         justify-self: end;
         align-self: baseline;
         margin: 0;
+        @media screen and (max-width: $smartphone) {
+          justify-self: start;
+        }
       }
       &-photo {
         width: 97px;
         height: auto;
         object-fit: contain;
         align-self: start;
+        @media screen and (max-width: $smartphone) {
+          height: 97px;
+        }
       }
       &-text {
         padding: 6px 12px;
@@ -553,6 +588,9 @@ footer {
     @include unmarkedList(0, 0);
     @include flexible(100%);
     gap: 5px;
+    @media screen and (max-width: $smartphone) {
+      flex-direction: column;
+    }
     &-item {
       &::after {
         color: rgba($color-txt-primary, 0.4);
