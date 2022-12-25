@@ -9,30 +9,30 @@
 }
 
 @mixin unmarkedList($padding, $margin) {
-  list-style-type: none;
-  padding: $padding;
   margin: $margin;
+  padding: $padding;
+  list-style-type: none;
 }
 
 @mixin link {
+  text-decoration: none;
   cursor: pointer;
   transition: opacity 0.5s ease;
-  text-decoration: none;
   &:hover {
     opacity: 0.7;
   }
 }
 
 @mixin navHoverEffect {
+  position: relative;
   cursor: pointer;
   transition: opacity 0.5s ease;
-  position: relative;
   &:after {
     content: '';
-    display: block;
     position: absolute;
     right: 0;
     bottom: -3px;
+    display: block;
     width: 0;
     height: 2px;
     background-color: $color-decorate-green;
@@ -40,11 +40,11 @@
   }
   &:hover:after {
     content: '';
-    width: 100%;
-    display: block;
     position: absolute;
-    left: 0;
     bottom: -3px;
+    left: 0;
+    display: block;
+    width: 100%;
     height: 2px;
     background-color: $color-decorate-blue;
     transition: width 0.5s;
@@ -56,9 +56,9 @@
   align-items: center;
   box-sizing: border-box;
   padding: 0;
+  border: none;
   cursor: pointer;
   transition: opacity 0.5s ease;
-  border: none;
   &:hover {
     opacity: 0.8;
   }
@@ -68,37 +68,37 @@
 }
 
 @mixin arrow() {
-  stroke-width: 2px;
   align-self: center;
   transition: transform 1s ease;
+  stroke-width: 2px;
 }
 
 @mixin notify() {
   @include flexible(21px);
   justify-content: center;
   align-items: center;
-  line-height: 1;
-  border-radius: 50%;
   width: 21px;
   height: 21px;
   font-weight: 500;
   font-size: 14px;
+  line-height: 1;
   color: $color-white;
   background-color: $color-decorate-blue;
+  border-radius: 50%;
 }
 
 @mixin deliveryStatusDefault {
-  z-index: 1;
   @include flexible(200px);
   content: '';
   position: absolute;
-  height: 3px;
   top: 26px;
   left: 60px;
+  z-index: 1;
+  height: 3px;
   background-color: $color-bg-delivery-default;
   @media screen and (max-width: $tablet) {
-    width: 250px;
     left: 60px;
+    width: 250px;
   }
   @media screen and (max-width: $tablet-middle) {
     width: 220px;
@@ -113,10 +113,10 @@
     width: 120px;
   }
   @media screen and (max-width: $mobile) {
-    height: 2px;
-    width: 130px;
     top: 21px;
     left: 40px;
+    width: 130px;
+    height: 2px;
   }
   @media screen and (max-width: $mobile-middle) {
     width: 100px;
@@ -127,17 +127,17 @@
 }
 
 @mixin deliveryStatusDone {
-  z-index: 10;
   @include flexible(180px);
   content: '';
   position: absolute;
-  height: 3px;
   top: 26px;
   right: 65px;
+  z-index: 10;
+  height: 3px;
   background-color: $color-decorate-green;
   @media screen and (max-width: $tablet) {
-    width: 250px;
     right: 60px;
+    width: 250px;
   }
   @media screen and (max-width: $tablet-middle) {
     width: 220px;
@@ -155,16 +155,16 @@
     width: 120px;
   }
   @media screen and (max-width: $mobile) {
-    height: 2px;
     top: 21px;
-    width: 120px;
     right: 40px;
+    width: 120px;
+    height: 2px;
   }
   @media screen and (max-width: $mobile-middle) {
     width: 100px;
   }
   @media screen and (max-width: $mobile-small) {
-    width: 80px;
     right: 30px;
+    width: 80px;
   }
 }
