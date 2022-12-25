@@ -659,6 +659,15 @@ footer {
     @media screen and (max-width: $smartphone) {
       column-gap: 20px;
     }
+    @media screen and (max-width: $smartphone-small) {
+      grid-template-columns: 1fr;
+      grid-template-areas:
+        'title-address'
+        'text-address'
+        'title-date'
+        'text-date';
+      row-gap: 10px;
+    }
   }
 
   &__title {
@@ -699,6 +708,12 @@ footer {
     border-radius: 5px 5px 0 0;
     padding: 32px 27px 24px 51px;
     grid-template-columns: repeat(4, max-content);
+    @media screen and (max-width: $mobile) {
+      padding: 20px;
+    }
+    @media screen and (max-width: $mobile-middle) {
+      padding: 10px;
+    }
     &-item {
       @include gridable(100%);
       justify-items: center;
@@ -733,6 +748,10 @@ footer {
       color: $color-txt-seconary;
       font-size: 17px;
       font-weight: 500;
+      @media screen and (max-width: $mobile) {
+        font-size: 12px;
+        font-weight: 400;
+      }
     }
   }
   &__circle {
@@ -743,9 +762,16 @@ footer {
     border-radius: 50%;
     height: 54px;
     background-color: $color-bg-delivery-default;
+    @media screen and (max-width: $mobile) {
+      width: 44px;
+      height: 44px;
+    }
   }
   &__icon {
     height: 24px;
+    @media screen and (max-width: $mobile) {
+      height: 16px;
+    }
   }
 }
 

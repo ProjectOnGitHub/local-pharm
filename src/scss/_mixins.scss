@@ -113,7 +113,16 @@
     width: 120px;
   }
   @media screen and (max-width: $mobile) {
-    display: none;
+    height: 2px;
+    width: 130px;
+    top: 21px;
+    left: 40px;
+  }
+  @media screen and (max-width: $mobile-middle) {
+    width: 100px;
+  }
+  @media screen and (max-width: $mobile-small) {
+    width: 80px;
   }
 }
 
@@ -146,6 +155,16 @@
     width: 120px;
   }
   @media screen and (max-width: $mobile) {
-    display: none;
+    height: 2px;
+    top: 21px;
+    width: 120px;
+    right: 40px;
+  }
+  @media screen and (max-width: $mobile-middle) {
+    width: 100px;
+  }
+  @media screen and (max-width: $mobile-small) {
+    width: 80px;
+    right: 30px;
   }
 }
