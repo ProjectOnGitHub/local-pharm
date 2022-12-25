@@ -35,11 +35,15 @@
               >
               <p class="header__phone-text">Круглосуточно</p>
             </div>
+            <a href="tel:84957305300" class="contact-us contact-us_header"
+              ><svg class="contact-us__icon">
+                <use xlink:href="#phone-icon"></use></svg
+            ></a>
             <div class="header__profile">
               <svg class="header__profile-icon">
                 <use xlink:href="#profile-icon"></use>
               </svg>
-              <a href="" class="header__link">Богдан</a>
+              <a href="" class="header__link header__link_profile">Богдан</a>
               <svg class="header__arrow-icon">
                 <use xlink:href="#arrow-icon"></use>
               </svg>
@@ -55,11 +59,19 @@
                 >Pharm</span
               >
             </a>
-            <bottom class="header__catalog-button"
-              >Каталог
+            <button
+              class="header__catalog-button header__catalog-button_desktop"
+            >
+              Каталог
               <svg class="header__catalog-arrow-icon">
-                <use xlink:href="#arrow-icon"></use></svg
-            ></bottom>
+                <use xlink:href="#arrow-icon"></use>
+              </svg>
+            </button>
+            <button
+              class="header__catalog-button header__catalog-button_mobile"
+            >
+              <div class="cross"><div class="cross__line"></div></div>
+            </button>
             <form class="search-form">
               <label class="search-form__label">
                 <input
@@ -131,10 +143,10 @@
               <li class="order">
                 <div class="order__container order__container_delivery">
                   <h2 class="order__title">В доставке</h2>
-                  <a href="tel:84957305300" class="contact-us"
+                  <a href="tel:84957305300" class="contact-us contact-us_order"
                     ><svg class="contact-us__icon">
                       <use xlink:href="#phone-icon"></use></svg
-                    >Связаться с нами</a
+                    ><span class="contact-us__text">Связаться с нами</span></a
                   >
                   <a href="" class="order__link order__link_number">№357765</a>
                   <p class="order__payment">Оплачено картой</p>
@@ -388,19 +400,18 @@
             <ul class="banner__list banner__list_store">
               <li class="banner__list-item">
                 <a href="" class="banner__link">
-                <svg class="banner__icon">
-                  <use xlink:href="#app-store-icon"></use>
-                </svg>
-              </a>
+                  <svg class="banner__icon">
+                    <use xlink:href="#app-store-icon"></use>
+                  </svg>
+                </a>
               </li>
-              </a>
-              <a href="" class="banner__link">
               <li class="banner__list-item">
-                <svg class="banner__icon">
-                  <use xlink:href="#google-play-icon"></use>
-                </svg>
+                <a href="" class="banner__link">
+                  <svg class="banner__icon">
+                    <use xlink:href="#google-play-icon"></use>
+                  </svg>
+                </a>
               </li>
-            </a>
             </ul>
             <ul class="banner__list banner__list_mobile">
               <li class="banner__list-item banner__list-item_android"></li>
@@ -484,10 +495,10 @@
             </div>
           </nav>
           <div class="footer__info">
-            <a href="tel:84957305300" class="contact-us"
+            <a href="tel:84957305300" class="contact-us contact-us_footer"
               ><svg class="contact-us__icon">
                 <use xlink:href="#phone-icon"></use></svg
-              >Связаться с нами</a
+              ><span class="contact-us__text">Связаться с нами</span></a
             >
             <ul class="footer__docs">
               <li class="footer__docs-item">

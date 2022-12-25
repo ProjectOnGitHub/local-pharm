@@ -94,17 +94,58 @@
   position: absolute;
   height: 3px;
   top: 26px;
-  left: 50px;
+  left: 60px;
   background-color: $color-bg-delivery-default;
+  @media screen and (max-width: $tablet) {
+    width: 250px;
+    left: 60px;
+  }
+  @media screen and (max-width: $tablet-middle) {
+    width: 220px;
+  }
+  @media screen and (max-width: $tablet-small) {
+    width: 200px;
+  }
+  @media screen and (max-width: $smartphone) {
+    width: 150px;
+  }
+  @media screen and (max-width: $smartphone-small) {
+    width: 120px;
+  }
+  @media screen and (max-width: $mobile) {
+    display: none;
+  }
 }
 
 @mixin deliveryStatusDone {
   z-index: 10;
-  @include flexible(200px);
+  @include flexible(180px);
   content: '';
   position: absolute;
   height: 3px;
   top: 26px;
-  right: 50px;
+  right: 65px;
   background-color: $color-decorate-green;
+  @media screen and (max-width: $tablet) {
+    width: 250px;
+    right: 60px;
+  }
+  @media screen and (max-width: $tablet-middle) {
+    width: 220px;
+  }
+  @media screen and (max-width: $tablet-small) {
+    width: 180px;
+  }
+  @media screen and (max-width: $smartphone) {
+    width: 150px;
+  }
+  @media screen and (max-width: $smartphone-middle) {
+    width: 140px;
+  }
+  @media screen and (max-width: $smartphone-small) {
+    width: 120px;
+  }
+  @media screen and (max-width: $mobile) {
+    display: none;
+  }
 }
