@@ -38,10 +38,19 @@ footer {
   }
   &__top {
     @include gridable(100%);
-    grid-template-columns: 1fr repeat(2, min-content);
+    grid-template-columns: minmax(150px, 1fr) repeat(2, min-content);
+    grid-template-areas: 'nav phone profile';
     font-size: 16px;
     height: 36px;
     gap: 22px;
+    @media screen and (max-width: $smartphone-middle) {
+      height: 100%;
+      grid-template-rows: repeat(3, max-content);
+      row-gap: 10px;
+      grid-template-areas:
+        'phone .  profile'
+        'nav nav nav';
+    }
   }
   &__link {
     cursor: pointer;
@@ -54,6 +63,9 @@ footer {
         display: none;
       }
     }
+  }
+  &__nav {
+    grid-area: nav;
   }
   &__menu {
     @include unmarkedList(0, 0);
@@ -84,10 +96,8 @@ footer {
     stroke: $color-decorate-blue;
   }
   &__phone {
+    grid-area: phone;
     @include gridable(100%);
-    @media screen and (max-width: $smartphone) {
-      display: none;
-    }
     &-number {
       @include link();
       color: $color-txt-primary;
@@ -102,6 +112,7 @@ footer {
     }
   }
   &__profile {
+    grid-area: profile;
     cursor: pointer;
     @include flexible(100%);
     align-items: center;
@@ -124,6 +135,9 @@ footer {
     grid-template-columns: repeat(2, min-content) 1fr min-content;
     align-items: center;
     @media screen and (max-width: $tablet-small) {
+      grid-template-columns: min-content minmax(150px, 1fr) min-content;
+      grid-template-areas: 'button search cart';
+      justify-content: space-between;
       gap: 10px;
     }
   }
@@ -141,6 +155,7 @@ footer {
     max-width: 133px;
     @media screen and (max-width: $tablet-small) {
       margin-right: 0;
+      display: none;
     }
     &-icon {
       grid-area: logo;
@@ -152,9 +167,6 @@ footer {
       font-size: 22px;
       text-transform: uppercase;
       line-height: 1;
-      @media screen and (max-width: $tablet-small) {
-        display: none;
-      }
       &_top {
         grid-area: logo-text-top;
         color: $color-decorate-green;
@@ -219,7 +231,7 @@ footer {
     @include gridable(100%);
     height: 100%;
     position: relative;
-    grid-template-columns: 1fr min-content;
+    grid-template-columns: 100% min-content;
   }
   &__input {
     border-radius: 5px;
@@ -231,6 +243,9 @@ footer {
     &::placeholder {
       color: $color-search;
       font-size: 18px;
+      @media screen and (max-width: $mobile) {
+        font-size: 14px;
+      }
     }
   }
   &__button {
@@ -823,12 +838,6 @@ footer {
   @include flexible(100%);
   gap: 10px;
   flex-wrap: nowrap;
-  &_header {
-    display: none;
-    @media screen and (max-width: $smartphone) {
-      display: flex;
-    }
-  }
   &_order {
     grid-area: contact;
     @media screen and (max-width: $smartphone) {
