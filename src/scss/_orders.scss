@@ -1,0 +1,33 @@
+.orders {
+  @include gridable(100%);
+  max-width: 825px;
+  padding-top: 11px;
+  gap: 32px;
+  @media screen and (max-width: $tablet) {
+    max-width: none;
+  }
+  &__title {
+    margin: 0;
+    font-weight: 400;
+    font-size: 36px;
+  }
+  &__quantity {
+    color: $color-txt-seconary;
+  }
+  &__list {
+    @include gridable(100%);
+    @include unmarkedList(0, 0);
+    box-sizing: border-box;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    gap: 28px;
+    &_in-delivery {
+      border-bottom-right-radius: 10px;
+      border-bottom-left-radius: 10px;
+      box-shadow: 0px 4px 20px rgba($color-txt-primary, 0.15);
+    }
+    &_delivered {
+      gap: 28px;
+    }
+  }
+}

@@ -1,0 +1,194 @@
+.header {
+  &__container {
+    @include gridable(100%);
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, min-content);
+    box-sizing: border-box;
+    max-width: $max-width;
+    height: 100%;
+    min-height: 117px;
+    padding: 20px 20px 0 20px;
+    gap: 11px;
+  }
+  &__top {
+    @include gridable(100%);
+    grid-template-areas: 'nav phone profile';
+    grid-template-columns: minmax(150px, 1fr) repeat(2, min-content);
+    height: 36px;
+    font-size: 16px;
+    gap: 22px;
+    @media screen and (max-width: $smartphone-middle) {
+      grid-template-areas:
+        'phone .  profile'
+        'nav nav nav';
+      grid-template-rows: repeat(3, max-content);
+      height: 100%;
+      row-gap: 10px;
+    }
+  }
+  &__link {
+    position: relative;
+    color: $color-decorate-blue;
+    text-decoration: none;
+    cursor: pointer;
+    transition: opacity 0.5s ease;
+    &_profile {
+      @media screen and (max-width: $tablet) {
+        display: none;
+      }
+    }
+  }
+  &__nav {
+    grid-area: nav;
+  }
+  &__menu {
+    @include unmarkedList(0, 0);
+    @include flexible(100%);
+    gap: 24px;
+    @media screen and (max-width: $tablet-small) {
+      font-size: 14px;
+    }
+    &-item {
+      @include link();
+      &_city {
+        @include flexible(max-content);
+        grid-template-columns: 1fr 1fr;
+        cursor: pointer;
+        gap: 8px;
+        &:hover {
+          .header__arrow-icon {
+            transform: rotateX(180deg);
+          }
+        }
+      }
+    }
+  }
+  &__arrow-icon {
+    @include arrow();
+    width: 12px;
+    height: 8px;
+    stroke: $color-decorate-blue;
+  }
+  &__phone {
+    @include gridable(100%);
+    grid-area: phone;
+    &-number {
+      @include link();
+      font-size: 18px;
+      color: $color-txt-primary;
+      white-space: nowrap;
+    }
+    &-text {
+      margin: 0;
+      font-size: 12px;
+      line-height: 1.25;
+      color: rgba($color-txt-primary, 0.5);
+    }
+  }
+  &__profile {
+    @include flexible(100%);
+    @include link();
+    grid-area: profile;
+    align-items: center;
+    cursor: pointer;
+    gap: 8px;
+    &:hover {
+      .header__arrow-icon {
+        transform: rotateX(180deg);
+      }
+    }
+
+    &-icon {
+      width: 17px;
+      height: 17px;
+    }
+  }
+  &__bottom {
+    @include gridable(100%);
+    grid-template-areas: 'logo button search cart';
+    grid-template-columns: repeat(2, min-content) 1fr min-content;
+    align-items: center;
+    @media screen and (max-width: $tablet-small) {
+      grid-template-areas: 'button search cart';
+      grid-template-columns: min-content minmax(150px, 1fr) min-content;
+      justify-content: space-between;
+      gap: 10px;
+    }
+  }
+  &__logo {
+    @include link();
+    @include gridable(100%);
+    grid-area: logo;
+    grid-template-areas:
+      'logo logo-text-top'
+      'logo logo-text-bottom';
+    justify-content: space-between;
+    align-items: center;
+    max-width: 133px;
+    margin-right: 26px;
+    column-gap: 9px;
+    @media screen and (max-width: $tablet-small) {
+      display: none;
+      margin-right: 0;
+    }
+    &-icon {
+      grid-area: logo;
+      width: 40px;
+      height: 40px;
+    }
+    &-text {
+      font-weight: 700;
+      font-size: 22px;
+      line-height: 1;
+      text-transform: uppercase;
+      &_top {
+        grid-area: logo-text-top;
+        color: $color-decorate-green;
+      }
+      &_bottom {
+        grid-area: logo-text-bottom;
+        color: $color-decorate-blue;
+      }
+    }
+  }
+  &__catalog {
+    &-button {
+      @include flexible(167px);
+      @include button();
+      grid-area: button;
+      height: 50px;
+      font-weight: 500;
+      color: $color-white;
+      background: linear-gradient(
+        270.1deg,
+        $color-decorate-blue 8.74%,
+        $color-decorate-btn-green 99.91%
+      );
+      border-radius: 5px;
+      gap: 8px;
+      &_desktop {
+        @media screen and (max-width: $tablet-small) {
+          display: none;
+        }
+        &:hover {
+          .header__catalog-arrow-icon {
+            transform: rotateX(180deg);
+          }
+        }
+      }
+      &_mobile {
+        display: none;
+        @media screen and (max-width: $tablet-small) {
+          display: flex;
+          width: 50px;
+        }
+      }
+    }
+    &-arrow-icon {
+      @include arrow();
+      width: 12px;
+      height: 8px;
+      stroke: $color-white;
+    }
+  }
+}

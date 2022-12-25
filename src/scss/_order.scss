@@ -1,0 +1,265 @@
+.order {
+  &__container {
+    @include gridable(100%);
+    align-items: center;
+    box-sizing: border-box;
+    border-radius: 5px;
+    @media screen and (max-width: $mobile-middle) {
+      gap: 10px;
+    }
+    &_delivery {
+      grid-template-areas:
+        'title contact payment'
+        'number . total';
+      grid-template-columns: max-content max-content 1fr;
+      padding: 30px 28px 26px 40px;
+      column-gap: 16px;
+      @media screen and (max-width: $mobile) {
+        padding: 20px;
+      }
+      @media screen and (max-width: $mobile-middle) {
+        grid-template-areas:
+          'title contact'
+          'number .'
+          'payment .'
+          'total .';
+        grid-template-columns: 1fr;
+      }
+    }
+    &_delivered {
+      grid-template-areas:
+        'title . payment'
+        'number . total';
+      padding: 12px 28px 12px 40px;
+      background-color: $color-bg-order;
+      @media screen and (max-width: $mobile) {
+        padding: 20px;
+      }
+      @media screen and (max-width: $mobile-middle) {
+        grid-template-areas:
+          'title'
+          'number'
+          'payment'
+          'total';
+        grid-template-columns: 1fr;
+      }
+    }
+  }
+  &__title {
+    grid-area: title;
+    margin: 0;
+    font-weight: 700;
+    font-size: 24px;
+    @media screen and (max-width: $smartphone-small) {
+      font-size: 20px;
+    }
+  }
+  &__link {
+    @include link();
+    font-weight: 600;
+    font-size: 18px;
+    &_number {
+      grid-area: number;
+      color: $color-decorate-blue;
+    }
+  }
+  &__payment {
+    grid-area: payment;
+    justify-self: end;
+    margin: 0;
+    font-weight: 500;
+    font-size: 17px;
+    @media screen and (max-width: $mobile-middle) {
+      justify-self: start;
+    }
+  }
+  &__total {
+    grid-area: total;
+    justify-self: end;
+    margin: 0;
+    font-weight: 700;
+    font-size: 24px;
+    @media screen and (max-width: $smartphone-small) {
+      font-size: 20px;
+    }
+    @media screen and (max-width: $mobile-middle) {
+      justify-self: start;
+    }
+  }
+  &__sublist {
+    @include gridable(100%);
+    @include unmarkedList(0, 0);
+    box-sizing: border-box;
+    padding-top: 65px;
+    padding-right: 27px;
+    padding-bottom: 10px;
+    padding-left: 36px;
+    @media screen and (max-width: $smartphone) {
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      padding: 40px;
+      gap: 30px;
+    }
+    @media screen and (max-width: $smartphone-middle) {
+      padding-right: 20px;
+      padding-left: 20px;
+    }
+    &-item {
+      @include gridable(100%);
+      grid-template-columns: max-content 1fr;
+      align-items: center;
+      box-sizing: border-box;
+      height: 100%;
+      min-height: 130px;
+      padding: 16px 0;
+      column-gap: 44px;
+      border-bottom: 1px solid $color-border-order;
+      @media screen and (max-width: $smartphone) {
+        grid-auto-rows: min-content 1fr;
+        grid-template-columns: 1fr;
+        height: 100%;
+        min-height: 280px;
+        max-height: 350px;
+        column-gap: 0;
+        row-gap: 10px;
+      }
+      &:last-child {
+        border-bottom: none;
+      }
+      &-info {
+        @include gridable(100%);
+        grid-template-areas:
+          'title price'
+          'docs .';
+        gap: 10px;
+        @media screen and (max-width: $smartphone) {
+          grid-template-areas:
+            'title'
+            'docs'
+            'price';
+          align-content: space-between;
+          height: 100%;
+          gap: 10px;
+        }
+        &_recipe {
+          grid-template-areas:
+            'title price'
+            'docs .'
+            'recipe.';
+          @media screen and (max-width: $smartphone) {
+            grid-template-areas:
+              'title'
+              'docs'
+              'recipe'
+              'price';
+          }
+          & .order__sublist-item-text_recipe {
+            display: block;
+            grid-area: recipe;
+          }
+        }
+      }
+      &-price {
+        grid-area: price;
+        justify-self: end;
+        align-self: baseline;
+        margin: 0;
+        font-weight: 500;
+        font-size: 22px;
+        @media screen and (max-width: $smartphone) {
+          justify-self: start;
+        }
+      }
+      &-photo {
+        align-self: start;
+        width: 97px;
+        height: auto;
+        object-fit: contain;
+        @media screen and (max-width: $smartphone) {
+          height: 97px;
+        }
+      }
+      &-text {
+        display: none;
+        width: max-content;
+        padding: 6px 12px;
+        font-weight: 500;
+        font-size: 14px;
+        color: $color-white;
+        background-color: $color-bg-recipe;
+        border-radius: 5px;
+      }
+    }
+  }
+  &__subtitle {
+    grid-area: title;
+    margin: 0;
+    font-weight: 600;
+    font-size: 18px;
+  }
+  &__docs {
+    @include unmarkedList(0, 0);
+    @include flexible(100%);
+    grid-area: docs;
+    gap: 5px;
+    @media screen and (max-width: $smartphone) {
+      flex-direction: column;
+    }
+    &-item {
+      &::after {
+        color: rgba($color-txt-primary, 0.4);
+      }
+      &:last-child::after {
+        display: none;
+      }
+    }
+    &-link {
+      @include link();
+      font-weight: 500;
+      font-size: 13px;
+      color: $color-decorate-green;
+    }
+  }
+  &__short-list {
+    @include unmarkedList(0, 0);
+    @include flexible(100%);
+    flex-wrap: wrap;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 26px 50px;
+    gap: 24px;
+    @media screen and (max-width: $mobile) {
+      padding-right: 40px;
+      padding-left: 40px;
+    }
+    &-item-photo {
+      width: 65px;
+      height: auto;
+      object-fit: contain;
+    }
+  }
+  &__show-all {
+    @include button();
+    width: 100%;
+    height: 42px;
+    font-weight: 600;
+    font-size: 18px;
+    color: $color-decorate-blue;
+    background-color: $color-bg-order;
+    border-radius: 5px;
+    &:hover {
+      .order__arrow-icon {
+        transform: rotateX(180deg);
+      }
+    }
+  }
+  &__arrow-icon {
+    @include arrow();
+    width: 22px;
+    height: 12px;
+    stroke: $color-decorate-blue;
+  }
+  &_delivered {
+    border-radius: 5px;
+    box-shadow: 0px 4px 20px rgba($color-txt-primary, 0.15);
+  }
+}

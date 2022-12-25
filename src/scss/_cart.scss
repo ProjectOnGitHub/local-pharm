@@ -1,0 +1,32 @@
+.cart {
+  @include link();
+  @include flexible(100%);
+  grid-area: cart;
+  flex-flow: nowrap;
+  align-items: center;
+  gap: 8px;
+  @media screen and (max-width: $tablet) {
+    position: relative;
+    justify-content: center;
+    align-items: flex-end;
+  }
+  &__icon {
+    width: 33px;
+    height: 33px;
+  }
+  &__link {
+    font-weight: 500;
+    font-size: 18px;
+    color: $color-decorate-blue;
+    text-decoration: none;
+    @media screen and (max-width: $tablet) {
+      display: none;
+    }
+  }
+  &__notify {
+    @include notify();
+    @media screen and (max-width: $tablet) {
+      position: absolute;
+    }
+  }
+}

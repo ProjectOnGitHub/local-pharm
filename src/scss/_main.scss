@@ -1,0 +1,15 @@
+.main {
+  &__container {
+    @include gridable(100%);
+    grid-template-columns: max-content minmax(280px, 825px);
+    justify-content: space-between;
+    justify-content: space-between;
+    box-sizing: border-box;
+    max-width: $max-width;
+    padding: 0 20px 36px 20px;
+    gap: 20px;
+    @media screen and (max-width: $tablet) {
+      grid-template-columns: 1fr;
+    }
+  }
+}

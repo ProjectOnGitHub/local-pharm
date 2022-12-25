@@ -1,0 +1,30 @@
+.contact-us {
+  @include link();
+  @include flexible(100%);
+  flex-wrap: nowrap;
+  align-items: center;
+  font-weight: 600;
+  font-size: 18px;
+  color: $color-decorate-green;
+  gap: 10px;
+  &_order {
+    grid-area: contact;
+    @media screen and (max-width: $smartphone) {
+      & .contact-us__text {
+        display: none;
+      }
+    }
+  }
+  &_footer {
+    @media screen and (max-width: $tablet-small) {
+      justify-content: center;
+    }
+  }
+  &__icon {
+    width: 19px;
+    height: 19px;
+    fill: $color-decorate-green;
+  }
+  &__text {
+  }
+}

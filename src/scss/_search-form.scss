@@ -1,0 +1,45 @@
+.search-form {
+  grid-area: search;
+  height: 100%;
+  margin: 0 18px 0 12px;
+  @media screen and (max-width: $tablet-small) {
+    margin: 0;
+  }
+  &__label {
+    @include gridable(100%);
+    position: relative;
+    grid-template-areas: 'element';
+    grid-template-columns: 100% min-content;
+    height: 100%;
+  }
+  &__input {
+    padding-left: 15px;
+    font-size: 18px;
+    border: 1px solid $color-search;
+    border-radius: 5px;
+    outline: none;
+    box-shadow: 0px 4px 4px rgba($color-txt-primary, 0.25);
+    &::placeholder {
+      font-size: 18px;
+      color: $color-search;
+      @media screen and (max-width: $mobile) {
+        font-size: 14px;
+      }
+    }
+  }
+  &__button {
+    @include button();
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 57px;
+    height: 100%;
+    background-color: $color-decorate-blue;
+    border-radius: 0 5px 5px 0;
+  }
+  &__icon {
+    width: 23px;
+    height: 23px;
+    fill: red;
+  }
+}

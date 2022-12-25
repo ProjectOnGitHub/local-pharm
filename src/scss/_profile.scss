@@ -1,0 +1,85 @@
+.profile {
+  @include gridable(100%);
+  grid-template-rows: repeat(2, min-content);
+  gap: 44px;
+  @media screen and (max-width: $tablet) {
+  }
+  &__info {
+    @include gridable(100%);
+    grid-template-areas:
+      'avatar'
+      'name'
+      'edit-link';
+    gap: 14px;
+    @media screen and (max-width: $tablet) {
+      grid-template-areas:
+        'avatar name'
+        'avatar edit-link';
+      justify-content: start;
+      flex-wrap: wrap;
+      align-content: center;
+      align-items: center;
+    }
+  }
+  &__avatar {
+    @include flexible(90px);
+    grid-area: avatar;
+    justify-content: center;
+    align-items: center;
+    height: 90px;
+    font-size: 34px;
+    color: $color-white;
+    background-color: $color-bg-profile;
+    border-radius: 50px;
+  }
+  &__name {
+    @include gridable(100%);
+    grid-area: name;
+    margin: 0;
+    font-weight: 400;
+    font-size: 24px;
+  }
+  &__edit-link {
+    @include link();
+    grid-area: edit-link;
+    font-weight: 500;
+    font-size: 16px;
+    color: $color-decorate-green;
+  }
+  &__menu {
+    @include flexible(100%);
+    @include unmarkedList(0, 0);
+    flex-direction: column;
+    font-weight: 500;
+    font-size: 17px;
+    gap: 20px;
+    @media screen and (max-width: $tablet) {
+      flex-flow: row wrap;
+      gap: 10px 20px;
+    }
+    &-item {
+      @include flexible(100%);
+      align-items: center;
+      max-width: max-content;
+      gap: 3px;
+    }
+    &-link {
+      @include link();
+      color: $color-txt-seconary;
+      &_active {
+        color: $color-txt-primary;
+      }
+      &_delivery {
+        color: $color-decorate-blue;
+      }
+    }
+  }
+  &__delivery-notify {
+    @include notify();
+    @media screen and (max-width: $tablet-small) {
+      width: 18px;
+      height: 18px;
+      font-size: 12px;
+    }
+  }
+}
