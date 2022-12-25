@@ -303,9 +303,6 @@ footer {
   grid-template-rows: repeat(2, min-content);
   gap: 44px;
   @media screen and (max-width: $tablet) {
-    grid-template-rows: auto;
-    grid-template-columns: max-content 1fr;
-    justify-content: space-between;
   }
   &__info {
     @include gridable(100%);
@@ -321,6 +318,7 @@ footer {
         'avatar edit-link';
       align-items: center;
       align-content: center;
+      justify-content: start;
     }
   }
   &__avatar {
@@ -355,16 +353,9 @@ footer {
     font-size: 17px;
     @include unmarkedList(0, 0);
     font-weight: 500;
-    max-width: 400px;
     @media screen and (max-width: $tablet) {
-      flex-wrap: wrap;
-      gap: 10px;
-      max-height: 90px;
-    }
-    @media screen and (max-width: $tablet-small) {
-      font-size: 12px;
-      gap: 5px;
-      max-height: none;
+      flex-flow: row wrap;
+      gap: 10px 20px;
     }
     &-item {
       @include flexible(100%);
