@@ -880,6 +880,12 @@ footer {
         'assortiment .'
         'service feedback';
     }
+    @media screen and (max-width: $mobile-small) {
+      grid-template-areas:
+        'assortiment '
+        'service'
+        'feedback';
+    }
   }
   &__column {
     @include gridable(100%);
@@ -896,6 +902,9 @@ footer {
         grid-area: feedback;
       }
     }
+    @media screen and (max-width: $mobile-small) {
+      gap: 15px;
+    }
   }
   &__title {
     margin: 0;
@@ -909,8 +918,14 @@ footer {
     flex-wrap: wrap;
     gap: 18px 62px;
     max-height: 138px;
+    @media screen and (max-width: $mobile-small) {
+      gap: 10px;
+    }
     &_assortiment {
       align-content: flex-start;
+      @media screen and (max-width: $mobile-small) {
+        max-height: 100%;
+      }
     }
   }
   &__info {
@@ -947,6 +962,7 @@ footer {
     }
     @media screen and (max-width: $tablet-small) {
       justify-content: center;
+      flex-wrap: wrap;
     }
   }
   &__copyright {
@@ -991,7 +1007,10 @@ footer {
     }
     @media screen and (max-width: $tablet-small) {
       grid-template-columns: 1fr;
-      grid-template-rows: repeat(2, 1fr);
+      grid-template-rows: repeat(2, max-content);
+      padding-top: 20px;
+      padding-bottom: 20px;
+      gap: 20px;
       justify-items: center;
       grid-template-areas:
         'text'
@@ -1007,6 +1026,9 @@ footer {
     @media screen and (max-width: $tablet-small) {
       text-align: center;
     }
+    @media screen and (max-width: $mobile-small) {
+      font-size: 18px;
+    }
   }
   &__list {
     @include unmarkedList(0, 0);
@@ -1017,6 +1039,10 @@ footer {
       grid-area: store;
       @media screen and (max-width: $tablet-small) {
         justify-content: center;
+      }
+      @media screen and (max-width: $mobile-small) {
+        flex-direction: column;
+        align-items: center;
       }
     }
     &_mobile {
